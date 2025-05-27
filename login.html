@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
@@ -19,6 +21,7 @@
             justify-content: center;
             align-items: center;
         }
+
         .container {
             width: 100%;
             max-width: 1200px;
@@ -27,18 +30,21 @@
             gap: 30px;
             perspective: 1000px;
         }
+
         .image-section {
             flex: 1;
             border-radius: 20px;
             overflow: hidden;
             position: relative;
         }
+
         .image-slider {
             width: 100%;
             height: 600px;
             position: relative;
             overflow: hidden;
         }
+
         .slide {
             position: absolute;
             width: 100%;
@@ -48,18 +54,23 @@
             background-size: cover;
             background-position: center;
         }
+
         .slide.active {
             opacity: 1;
         }
+
         .slide:nth-child(1) {
             background-image: url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=800');
         }
+
         .slide:nth-child(2) {
             background-image: url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=800');
         }
+
         .slide:nth-child(3) {
             background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800');
         }
+
         .auth-container {
             flex: 1;
             background: rgba(255, 255, 255, 0.1);
@@ -70,9 +81,11 @@
             transform-style: preserve-3d;
             transition: transform 0.6s;
         }
+
         .auth-container.flipped {
             transform: rotateY(180deg);
         }
+
         .form-container {
             backface-visibility: hidden;
             position: absolute;
@@ -82,12 +95,15 @@
             left: 0;
             padding: 40px;
         }
+
         .login-form {
             transform: rotateY(0deg);
         }
+
         .register-form {
             transform: rotateY(180deg);
         }
+
         h2 {
             font-size: 2.5em;
             margin-bottom: 30px;
@@ -95,14 +111,17 @@
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
+
         .form-group {
             margin-bottom: 20px;
         }
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-size: 1.1em;
         }
+
         .form-group input {
             width: 100%;
             padding: 12px;
@@ -113,13 +132,16 @@
             font-size: 1.1em;
             transition: all 0.3s ease;
         }
+
         .form-group input:focus {
             outline: none;
             background: rgba(255, 255, 255, 0.2);
         }
+
         .form-group input::placeholder {
             color: rgba(255, 255, 255, 0.7);
         }
+
         .btn {
             width: 100%;
             padding: 12px;
@@ -132,23 +154,28 @@
             transition: all 0.3s ease;
             margin-top: 20px;
         }
+
         .btn:hover {
             background: #ff8787;
             transform: translateY(-2px);
         }
+
         .switch-form {
             text-align: center;
             margin-top: 20px;
         }
+
         .switch-form a {
             color: white;
             text-decoration: none;
             font-size: 1.1em;
             transition: color 0.3s;
         }
+
         .switch-form a:hover {
             color: #ff8787;
         }
+
         .quote {
             position: absolute;
             bottom: 20px;
@@ -159,19 +186,23 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
             font-style: italic;
         }
+
         @media (max-width: 900px) {
             .container {
                 flex-direction: column;
             }
+
             .image-slider {
                 height: 300px;
             }
+
             .auth-container {
                 min-height: 500px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="image-section">
@@ -184,7 +215,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="auth-container" id="authContainer">
             <div class="form-container login-form">
                 <h2>Connexion</h2>
@@ -199,7 +230,7 @@
                     </div>
                     <button type="submit" class="btn">Se connecter avec nous </button>
                     <div class="switch-form">
-                        <a href="register.html">Pas encore inscrit ? Créer un compte</a>
+                        <a href="register.html">Pas encore inscrit ? Créer un compte avec nous</a>
                     </div>
                 </form>
             </div>
@@ -253,11 +284,11 @@
         }
 
         // Gestion des formulaires
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const email = document.getElementById('loginEmail').value;
             const password = document.getElementById('loginPassword').value;
-            
+
             // Simuler une vérification des identifiants
             if (localStorage.getItem(email) === password) {
                 sessionStorage.setItem('isLoggedIn', 'true');
@@ -268,7 +299,7 @@
             }
         });
 
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const name = document.getElementById('registerName').value;
             const email = document.getElementById('registerEmail').value;
@@ -290,14 +321,15 @@
             // Enregistrement des informations
             localStorage.setItem(email, password);
             localStorage.setItem(email + '_name', name);
-            
+
             // Connexion automatique après inscription
             sessionStorage.setItem('isLoggedIn', 'true');
             sessionStorage.setItem('userEmail', email);
-            
+
             alert('Inscription réussie ! Bienvenue ' + name);
             window.location.href = 'index.html';
         });
     </script>
 </body>
-</html> 
+
+</html>
