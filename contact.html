@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Association de Don</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            min-height: 100vh;
+            color: white;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ff8787;
+        }
+        .container {
+            text-align: center;
+            padding: 100px 20px 20px;
+            max-width: 800px;
+            margin: 80px auto;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+        .contact-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            font-size: 1.2em;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+        .contact-item i {
+            font-size: 1.5em;
+            margin-right: 15px;
+            color: #ff8787;
+            width: 40px;
+            text-align: center;
+        }
+        .contact-item a {
+            color: #4ecdc4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-item a:hover {
+            color: #ff8787;
+        }
+        .social-links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+        }
+        .social-links a:hover {
+            background: #ff8787;
+            transform: translateY(-3px);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 60px 10px;
+                padding: 80px 15px 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .social-links {
+                flex-wrap: wrap;
+            }
+            .social-links a {
+                width: calc(50% - 10px);
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Contactez-nous</h1>
+        
+        <div class="contact-section">
+            <div class="contact-item">
+                <i>📧</i>
+                <div>
+                    <strong>Email</strong><br>
+                    <a href="mailto:fadwa.elq1@gmail.com">fadwa.elq1@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i>📍</i>
+                <div>
+                    <strong>Adresse</strong><br>
+                    Boulevard Roudani, EMSI, Casablanca
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i>📞</i>
+                <div>
+                    <strong>Téléphone</strong><br>
+                    06 18 97 85 09
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i>⏰</i>
+                <div>
+                    <strong>Horaires d'ouverture</strong><br>
+                    Lundi - Vendredi : 9h00 - 18h00<br>
+                    Samedi : 9h00 - 12h00
+                </div>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">Instagram</a>
+        </div>
+    </div>
+</body>
+</html> 
